@@ -1,1 +1,1 @@
-# WARSZTAT_game_of_gussing_numbers_3
+# WARSZTAT_game_of_guessing_numbers_3
