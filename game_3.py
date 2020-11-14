@@ -10,8 +10,8 @@ def guess_of_numbers():
         return f'''
             <form action="/" method="POST">
                 <p>
-                    <input type"hidden" name="min" value=0>
-                    <input type"hidden" name="max" value=1000> 
+                    <p type"hidden" name="min" value=0>
+                    <p type"hidden" name="max" value=1000> 
                 </p>    
             <label>
                 Pomyśl liczbę od 0 do 1000, a ja ją zgadnę w max. 10 próbkach
@@ -133,6 +133,7 @@ def guess_of_numbers():
                 </label>
                 </form>
                 '''
+
 
 if __name__ == "__main__":
     app.run(debug=True)
