@@ -27,10 +27,10 @@ def guess_of_numbers():
             </html>
             '''
     else:
-        answer = input(request.form.get("answer"))
-        user_min = int(input(request.form.get("user_min")))
-        user_max = int(input(request.form.get("user_max")))
-        guess = int(input(request.form.get("guess")))
+        answer = request.form.get("answer")
+        user_min = request.form.get("user_min")
+        user_max = request.form.get("user_max")
+        guess = request.form.get("guess")
 
         if answer == 'You win':
             return f'''
@@ -51,7 +51,7 @@ def guess_of_numbers():
         elif answer == 'Too small':
             user_min = guess
 
-        guess = int((user_max - user_min) / 2) + user_min
+        guess = int((int(user_max) - int(user_min)) / 2) + int(user_min)
 
         return f'''
             <!DOCTYPE html>
@@ -67,8 +67,8 @@ def guess_of_numbers():
                     <input type="submit" name="answer" value="Too small">
                     <input type="submit" name="answer" value="You win">
                     <input type="hidden" name="guess" value="{guess}">
-                    <input type"hidden" name="user_min" value={user_min}>
-                    <input type"hidden" name="user_max" value={user_max}>
+                    <input type="hidden" name="user_min" value={user_min}>
+                    <input type="hidden" name="user_max" value={user_max}>
                 </form>            
             </body>
             </html>
@@ -76,4 +76,4 @@ def guess_of_numbers():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5800)
